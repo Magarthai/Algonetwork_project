@@ -1,0 +1,28 @@
+version: '3'
+services:
+  city_1:
+    build: .
+    command: ["python", "city.py", "1", "2", "3", "4"]
+    networks:
+      - city_network
+
+  city_2:
+    build: .
+    command: ["python", "city.py", "2", "1", "3", "4"]
+    networks:
+      - city_network
+
+  city_3:
+    build: .
+    command: ["python", "city.py", "3", "1", "2", "4"]
+    networks:
+      - city_network
+
+  city_4:
+    build: .
+    command: ["python", "city.py", "4", "1", "2", "3"]
+    networks:
+      - city_network
+
+networks:
+  city_network:
